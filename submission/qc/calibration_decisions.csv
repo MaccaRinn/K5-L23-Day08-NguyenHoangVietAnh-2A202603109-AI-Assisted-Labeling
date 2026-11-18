@@ -1,1 +1,4 @@
 case_id,image,nguon,van_de,quyet_dinh,quy_tac_ghi_vao_guideline,phien_ban_guideline
+CAL-01,img_013|img_004,loi_may,Tuk-tuk/xe ba bánh bị YOLO26 nhận nhầm thành car hoặc truck,Luôn gán phương tiện ba bánh bằng three_wheeler; người lái gán riêng person,Chốt lớp three_wheeler ở mục 2 của v1.0,v1.1
+CAL-02,img_017|img_023,cau_hoi_mo,Vật dưới 20 px hoặc cụm người/xe chen sát khó tách,Chỉ dùng ignore_region cho cụm nhỏ/dính quá khó tách; vật nhìn thấy đủ cá thể vẫn gán riêng,cần thể hiện ngưỡng kích thước và ignore_region mục 2 của v1.0,v1.1
+CAL-03,img_006|img_027,loi_may,Pre-label bỏ hoặc chỉnh sai box ở motorbike/three_wheeler trong batch,Quét trái-phải toàn ảnh trước khi tin box máy và đối chiếu vùng che khuất trước khi giữ box,tăng checklist quét ảnh và đối chiếu 4 cạnh trong mục 4 v1.0,v1.1

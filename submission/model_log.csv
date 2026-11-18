@@ -1,1 +1,5 @@
 run_id,part,model,params,split,n_boxes,sec_per_img,what_went_right,what_went_wrong,decision
+y26_pilot_c025,2,YOLO26n,size=n conf=0.25,pilot,148,0.32,Nhận diện person,motorbike,car,bicycle,truck,bus trên 8 ảnh pilot,Thiếu tuk-tuk dạng three_wheeler; tuk-tuk bị gọi car/truck hoặc có nhiều false positive ở conf thấp,Dùng YOLOE cho three_wheeler
+y26_pilot_c05,2,YOLO26n,size=n conf=0.50,pilot,81,0.32,Giam box thua và tiếng ồn so với conf=0.25,Van không tạo ra lớp three_wheeler; tuk-tuk van được nham hoặc bỏ sot,Kết hợp YOLOE để bù lớp open-vocab
+yoloe_pilot_tuk,2,YOLOE-26s,"classes=three_wheeler conf=0.25",pilot,8,0.40,Bổ sung box three_wheeler cho tuk-tuk trên pilot,Bien phap van phụ thuộc chất lượng prompt va box có thể lệch,Giữ YOLOE làm nguồn ưu tiên cho lớp three_wheeler
+y26_sam_pilot,2,YOLO26n+SAM2.1-T,"size=n classes=person,motorbike,car conf=0.30 sam=sam2.1_t.pt",pilot,8,3.00,Đã tách mask thử nghiệm cho img_004 và img_013,Tốc độ mô tả mask và biên có thể lem nền hoặc om phần người lái,Dùng điểm positive/negative trong Pha 5 va đối chiếu guideline
